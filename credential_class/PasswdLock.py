@@ -9,32 +9,32 @@ def create_user(fname,lname,password):
 	new_user = User(fname,lname,password)
 	return new_user
 
-def save_user(user):
+def save_usr(user):
 	'''
 	Function to save a new user account
 	'''
-	User.save_user(user)
+	User.save_usr(user)
 
 
-def verify_user(first_name,password):
+def validate_user(first_name,password):
 	'''
 	Function that verifies the existance of the user before creating credentials
 	'''
-	checking_user = Credentials.check_user(first_name,password)
+	checking_user = Credentials.validate_user(first_name,password)
 	return checking_user
 
 def generate_password():
 	'''
 	Function to generate a password automatically
 	'''
-	gen_pass = Credential.generate_password()
+	gen_pass = Credentials.generate_password()
 	return gen_pass
 
-def create_credential(user_name,site_name,account_name,password):
+def create_credential(fname,site_name,account_name,password):
 	'''
 	Function to create a new credential
 	'''
-	new_credential=Credential(user_name,site_name,account_name,password)
+	new_credential=Credential(fname,site_name,account_name,password)
 	return new_credential
 
 def save_credential(credential):
@@ -43,11 +43,11 @@ def save_credential(credential):
 	'''
 	Credential.save_credentials(credential)
 
-def display_credentials(user_name):
+def display_credentials(fname):
 	'''
 	Function to display credentials saved by a user
 	'''
-	return Credential.display_credentials(user_name)
+	return Credential.display_credentials(fname)
 	
 def copy_credential(site_name):
 	'''
@@ -73,16 +73,16 @@ def main():
 			first_name = input('Enter your first name - ').strip()
 			last_name = input('Enter your last name - ').strip()
 			password = input('Enter your password - ').strip()
-			save_user(create_user(first_name,last_name,password))
+			save_usr(create_user(first_name,last_name,password))
 			print(" ")
 			print(f'New Account Created for: {first_name} {last_name} using password: {password}')
 		elif short_code == 'li':
 			print("-"*60)
 			print(' ')
 			print('To login, enter your account details:')
-			user_name = input('Enter your first name - ').strip()
+			first_name = input('Enter your first name - ').strip()
 			password = str(input('Enter your password - '))
-			user_exists = verify_user(first_name,password)
+			user_exists = validate_user(first_name,password)
 			if user_exists == first_name:
 				print(" ")
 				print(f'Welcome {first_name}. Please choose an option to continue.')
@@ -124,7 +124,7 @@ def main():
 						print(' ')
 					elif short_code == 'dc':
 						print(' ')
-						if display_credentials(user_name):
+						if dshow_cred(user_name):
 							print('Here is a list of all your credentials')
 							print(' ')
 							for credential in display_credentials(user_name):
