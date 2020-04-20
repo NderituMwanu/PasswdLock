@@ -30,10 +30,11 @@ class Credentials:
         self.ac_name = ac_name
         self.password = password
 
-    def save_cred(self):
+    def save_cred(self,first_name,site_name,ac_name,password):
         '''
         saves a new credential
         '''
+        
         Credentials.credentials_list.append(self)
 
     def generate_password(char=string.ascii_uppercase+string.digits):
@@ -43,16 +44,6 @@ class Credentials:
         key_pass =''.join(random.choice(char) for _ in range(0,10))
         return key_pass
 
-    @classmethod
-    def show_cred(cls,username):
-        ''''
-        shows all credentials
-        '''
-        user_cred_list = []
-        for credentials in cls.credemtials_list:
-            if credential.username == username:
-                user_cred_list.append(credentials)
-        return user_credentials_list
 
     @classmethod
     def find_platformname(cls,platform_name):
@@ -65,9 +56,19 @@ class Credentials:
     
     @classmethod
     def copy_cred(cls,platform_name):
-        find_cred = Credential.get_platfornname(platform_name)
+        find_cred = Credentials.get_platform_name(platform_name)
         return pyperclip.copy(find_cred.password)
 
+    @classmethod
+    def show_cred(cls,first_name):
+        ''''
+        shows all credentials
+        '''
+        user_cred_list = []
+        for credentials in cls.credentials_list:
+            if credential.first_name == first_name:
+                user_cred_list.append(credentials)
+        return user_cred_list
 
     
 class User:
@@ -90,6 +91,17 @@ class User:
         saves a newly created user
         '''
         User.users_list.append(self)
+
+    @classmethod
+    def show_cred(cls,first_name):
+        ''''
+        shows all credentials
+        '''
+        user_cred_list = []
+        for credentials in cls.credentials_list:
+            if credential.first_name == first_name:
+                user_cred_list.append(credentials)
+        return user_credentials_list
     
         
     
