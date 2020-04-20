@@ -53,20 +53,17 @@ class TestUsr(unittest.TestCase):
         self.assertEqual(SELF.new_usr.password,'12345')
 
     def test_save_usr(self):
+        '''
+        Test for saved user
+        '''
+
 
         self.new_usr.save_usr()
         self.assertEqual(len(User.users_list),1)
 
 
 
-def test_save_multiple_credentials(self):
-    '''
-    save multiple objects to our list
-    '''
-    self.new_cred.save_credentials()
-    test_credential = Credentials("malcolm","1298") #a anew user
-    test_credential.save_credentials()
-    self.asserEqual(len(Contact.contact_list),2)
+
 
 if __name__ == '__main__':
     unittest.main()
