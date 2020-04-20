@@ -1,6 +1,7 @@
 import unittest #Importing the unittest module
 from credentialclass import User, Credentials  #importing the credentials class
 import pyperclip
+
 class TestCredentials(unittest.TestCase):
     '''
     Test class that defines the test cases for our credentials and accounts.
