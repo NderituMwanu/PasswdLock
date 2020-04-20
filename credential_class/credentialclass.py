@@ -30,7 +30,7 @@ class Credentials:
         self.ac_name = ac_name
         self.password = password
 
-    def save_cred(first_name,site_name,ac_name,password):
+    def save_cred(self):
         '''
         saves a new credential
         '''
@@ -65,9 +65,9 @@ class Credentials:
         shows all credentials
         '''
         user_cred_list = []
-        for credentials in cls.credentials_list:
-            if credential.first_name == first_name:
-                user_cred_list.append(credentials)
+        for credential in cls.credentials_list:
+            if Credentials.first_name == first_name:
+                user_cred_list.append(credential)
         return user_cred_list
 
     
