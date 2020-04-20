@@ -36,6 +36,12 @@ class Credentials:
         '''
         
         Credentials.credentials_list.append(self)
+    
+    def delete_credential(self):
+        '''
+        Deletes a credential added
+        '''
+        Credentials.credentials_list.remove(self)
 
     def generate_passkey(char=string.ascii_uppercase+string.digits):
         '''

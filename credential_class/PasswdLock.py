@@ -49,6 +49,14 @@ def show_cred(first_name):
 	Function to display credentials saved by a user
 	'''
 	return Credentials.show_cred(first_name)
+
+def delete_cred(credential):
+    '''
+    this method deleted a saved credential
+    '''
+
+    Credentials.delete_credential(credential)
+
 	
 def copy_cred(site_name):
 	'''
@@ -91,7 +99,7 @@ def main():
 				print(' ')
 				while True:
 					print("-"*100)
-					print('Key in any of the following options: \n createc ---> Create a Credential \n dispcred ---> Display Credentials \n Cp ---> Copy Password \n x ---> Exit')
+					print('Key in any of the following options: \n createc ---> Create a Credential \n dispcred ---> Display Credentials \n Cp ---> DelCopy Password \n x ---> Exit')
 					short_code = input('Enter a choice: ').lower().strip()
 					print("-"*100)
 					if short_code == 'x':
@@ -141,6 +149,7 @@ def main():
 						selected_site = input('Key in the name of the site you need to copy: ')
 						copy_cred(selected_site)
 						print('')
+                    
 					else:
 						print('Oops! Wrong option entered. Try again.')
 				
