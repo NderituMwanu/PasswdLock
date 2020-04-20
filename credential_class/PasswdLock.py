@@ -132,6 +132,7 @@ def main():
 						print(' ')
 						print(f'Credentials made: Site Name: {site_name} -- Account Name: {ac_name} --Password: {password}')
 						print(' ')
+                
 					elif short_code == 'dispcred':
 						print(' ')
 						if show_cred(first_name):
