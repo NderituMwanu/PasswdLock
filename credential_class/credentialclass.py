@@ -30,7 +30,7 @@ class Credentials:
         self.ac_name = ac_name
         self.password = password
 
-    def save_cred(self,first_name,site_name,ac_name,password):
+    def save_cred(first_name,site_name,ac_name,password):
         '''
         saves a new credential
         '''
@@ -46,17 +46,17 @@ class Credentials:
 
 
     @classmethod
-    def find_platformname(cls,platform_name):
+    def get_site_name(cls,site_name):
         '''
         takes a site name and returns creds
         '''
-        for credential in cls.credemtials_list:
-            if credential.platform_name == platform_name:
+        for credential in cls.credentials_list:
+            if credential.site_name == site_name:
                 return credential
     
     @classmethod
-    def copy_cred(cls,platform_name):
-        find_cred = Credentials.get_platform_name(platform_name)
+    def copy_cred(cls,site_name):
+        find_cred = Credentials.get_site_name(site_name)
         return pyperclip.copy(find_cred.password)
 
     @classmethod
