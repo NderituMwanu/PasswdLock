@@ -128,7 +128,7 @@ def main():
 							print('Here is a list of all your credentials')
 							print(' ')
 							for credential in show_cred(first_name):
-								print(f'Site Name: {credential.site_name} - Account Name: {credential.ac_name} - Password: {credential.password}')
+								print(f' Account Name: {credential.ac_name} - Password: {credential.password}')
 							print(' ')	
 						else:
 							print(' ')

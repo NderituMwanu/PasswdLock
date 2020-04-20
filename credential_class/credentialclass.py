@@ -66,7 +66,7 @@ class Credentials:
         '''
         user_cred_list = []
         for credential in cls.credentials_list:
-            if Credentials.first_name == first_name:
+            if credential.first_name == first_name:
                 user_cred_list.append(credential)
         return user_cred_list
 
