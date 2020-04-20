@@ -50,11 +50,11 @@ def show_cred(first_name):
 	'''
 	return Credentials.show_cred(first_name)
 	
-def copy_credential(site_name):
+def copy_cred(site_name):
 	'''
 	Function to copy a credentials details to the clipboard
 	'''
-	return Credential.copy_credential(site_name)
+	return Credentials.copy_cred(site_name)
 
 
 def main():
@@ -136,8 +136,8 @@ def main():
 							print(' ')
 					elif short_code == 'cp':
 						print(' ')
-						chosen_site = input('Enter the site name for the credential password to copy: ')
-						copy_cred(chosen_site)
+						selected_site = input('Enter the site name for the credential password to copy: ')
+						copy_cred(selected_site)
 						print('')
 					else:
 						print('Oops! Wrong option entered. Try again.')
