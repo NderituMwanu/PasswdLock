@@ -37,7 +37,7 @@ class Credentials:
         
         Credentials.credentials_list.append(self)
 
-    def generate_password(char=string.ascii_uppercase+string.digits):
+    def generate_passkey(char=string.ascii_uppercase+string.digits):
         '''
         generates 10 character passkey
         '''
