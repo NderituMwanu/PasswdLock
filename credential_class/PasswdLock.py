@@ -37,12 +37,12 @@ def create_credential(first_name,site_name,ac_name,password):
 	new_credential=Credentials(first_name,site_name,ac_name,password)
 	return new_credential
 
-def save_cred(first_name,site_name,ac_name,password):
+def save_cred(credential):
 	'''
 	Function to save a newly created credential
 	'''
     
-	return Credentials.save_cred(credential)
+	Credentials.save_cred(credential)
 
 def show_cred(first_name):
 	'''
