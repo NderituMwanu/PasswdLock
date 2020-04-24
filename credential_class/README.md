@@ -30,7 +30,6 @@ The technologies used include:
 email:mwanugerald@gmail.com
       jisnderi@gmail.com
 
-
 ## LICENSE
 
 Copyright <2020> <Gerald Nderitu>
